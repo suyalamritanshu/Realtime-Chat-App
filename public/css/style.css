@@ -2,7 +2,7 @@
 
 :root {
 	--dark-color-a: hsla(212, 91%, 45%, 0.918);
-	--dark-color-sb: #0c7ee9e3;
+	--dark-color-b: #0c7ee9e3;
 	--light-color: #e6e9ff;
 	--success-color: #5cb87f;
 	--error-color: #d9534f;
@@ -63,25 +63,25 @@ a {
 	grid-template-columns: 1fr 3fr;
 }
 
-.chat-sidebar {
+#chat-sidebar {
 	background: var(--dark-color-b);
 	color: #fff;
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
 }
 
-.chat-sidebar h2 {
+#chat-sidebar h2 {
 	font-size: 20px;
 	background: rgba(0, 0, 0, 0.1);
 	padding: 10px;
 	margin-bottom: 20px;
 }
 
-.chat-sidebar h3 {
+#chat-sidebar h3 {
 	margin-bottom: 15px;
 }
 
-.chat-sidebar ul li {
+#chat-sidebar ul li {
 	padding: 10px 0;
 }
 
@@ -177,18 +177,41 @@ a {
 	width: 100%;
 }
 
+#mobile-menu{
+	display: none;
+}
+
 .join-main .btn {
 	margin-top: 20px;
 	width: 100%;
 }
 
-@media (max-width: 700px) {
-	.chat-main {
-		display: block;
-	}
+#leave-btn-mobile{
+	display: none;
+}
 
-	.chat-sidebar {
+@media (max-width: 700px) {
+	#leave-btn-nav{
 		display: none;
+	}
+	#mobile-menu{
+		display: block;
+		width: 32px;
+		height: 32px;
+		
+	}
+	.chat-main{
+		display: flex;
+		flex-direction: column;
+	}
+	#chat-sidebar {
+		display: none;
+		flex-direction: column;
+		min-width: 90vw;
+	}
+	#leave-btn-mobile{
+		display: block;
+		/* width: 100vw; */
 	}
 }
 
