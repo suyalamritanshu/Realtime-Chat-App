@@ -2,6 +2,7 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
+let userCount = 0;
 
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
@@ -72,12 +73,18 @@ function outputRoomName(room) {
 
 // Add users to DOM
 function outputUsers(users) {
+  
+  var item = document.getElementById("activeUsers");
   userList.innerHTML = '';
   users.forEach((user) => {
     const li = document.createElement('li');
     li.innerText = user.username;
     userList.appendChild(li);
+    userCount += 1;
+    item.innerHTML = userCount;
+    
   });
+  userCount = 0;
 }
 
 //Prompt the user before leave chat room
@@ -85,6 +92,7 @@ document.getElementById('leave-btn').addEventListener('click', () => {
   const leaveRoom = confirm('Want to leave the chatroom?');
   if (leaveRoom) {
     window.location = '../index.html';
+    userCount -= 1;
   } else {
   }
 });
@@ -98,3 +106,7 @@ document.getElementById('mobile-menu').addEventListener('click', () => {
   }
 }
 )
+
+
+
+ 
