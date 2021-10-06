@@ -207,11 +207,11 @@ a {
 	#chat-sidebar {
 		display: none;
 		flex-direction: column;
-		min-width: 90vw;
+		width: 90vw;
+		overflow-y: auto;
 	}
 	#leave-btn-mobile{
 		display: block;
-		/* width: 100vw; */
 	}
 }
 
