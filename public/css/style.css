@@ -207,11 +207,13 @@ a {
 	#chat-sidebar {
 		display: none;
 		flex-direction: column;
-		width: 90vw;
 		overflow-y: auto;
 	}
 	#leave-btn-mobile{
 		display: block;
+	}
+	.chat-header{
+		font-size: 12px;
 	}
 }
 
