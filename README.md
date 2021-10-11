@@ -2,7 +2,7 @@
 
 **This project is deployed on** https://realtime-chat-personnel.herokuapp.com/
 
-![Hnet-image (2)](preview.gif)
+![Demo](demo.gif)
 
 This is a Realtime Chat App in which user have to enter his username and select a Room in which he can do discusions.
 
