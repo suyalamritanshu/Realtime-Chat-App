@@ -2,7 +2,7 @@
 
 **This project is deployed on** https://realtime-chat-personnel.herokuapp.com/
 
-![chatapp](https://user-images.githubusercontent.com/80252410/136014831-1d26570f-2618-45d2-a652-644b4a6ac15f.png)
+![Hnet-image (2)](https://user-images.githubusercontent.com/57860287/136738963-16e33b5b-39bd-4e4a-bb6f-09b19352bd32.gif)
 
 This is a Realtime Chat App in which user have to enter his username and select a Room in which he can do discusions.
 
@@ -41,4 +41,4 @@ Create a new branch for your work.
 ```
 git checkout -b <branch-name>
 ```
-![Hnet-image (2)](https://user-images.githubusercontent.com/57860287/136738963-16e33b5b-39bd-4e4a-bb6f-09b19352bd32.gif)
+
