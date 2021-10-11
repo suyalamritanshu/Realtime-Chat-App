@@ -236,7 +236,8 @@ a {
 	color: var(--dark-color-a);
 
 }
-emoji-picker{
+
+.emoji-picker{
 	position: absolute;	 
 	right:340px;
   --num-columns: 12;
@@ -244,7 +245,9 @@ emoji-picker{
   --button-hover-background:var(--light-color);
   
 }
-
+.invisible{
+	display: none;
+}
 
  
  

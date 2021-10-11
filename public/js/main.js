@@ -96,30 +96,43 @@ document.getElementById('leave-btn-nav').addEventListener('click', () => {
   } else {
   }
 });
-let picker = document.querySelector("emoji-picker");
-let emojiSelector = document.querySelector('.emoji');
-emojiSelector.addEventListener('click',(e) =>{
-      e.preventDefault();
-     if(picker.style.display==="none"){
-       picker.style.display = "block";
 
-     }
-     else {
-       picker.style.display = "none";
-     }
+// Toggle Emoji Picker
+const togglePicker = document.getElementById("emoji");
+const emojiPicker = document.getElementById('emoji-picker');
+console.log({togglePicker});
+console.log({emojiPicker});
+togglePicker.addEventListener('click',(e) =>{
+    e.preventDefault();
+    console.log("Clicked togglePicker!");
+    emojiPicker.classList.toggle("invisible");
+});
 
-})
+function insertAtCursor(myField, myValue) {
+  if (document.selection) {
+      myField.focus();
+      sel = document.selection.createRange();
+      sel.text = myValue;
+  }
+  else if (myField.selectionStart || myField.selectionStart == '0') {
+      var startPos = myField.selectionStart;
+      var endPos = myField.selectionEnd;
+      myField.value = myField.value.substring(0, startPos)
+          + myValue
+          + myField.value.substring(endPos, myField.value.length);
+  } else {
+      myField.value += myValue;
+  }
+}
 
-
-
- picker.addEventListener("emoji-click", (event) => {
-        let textBox = document.getElementById('msg');
-       let myObj =  JSON.stringify(event.detail.unicode);
-       myObj = myObj.replace(/^"(.*)"$/, '$1');
-        textBox.value = textBox.value + myObj ;
-        console.log(event.detail);
-
-   });
+// Listen for emoji-click events and add unicode to text-box 
+emojiPicker.addEventListener("emoji-click", (event) => {
+  let textBox = document.getElementById('msg');
+  const unicodeEmoji = event.detail.unicode;
+  
+  // Inserting unicode character at current cursor-location in input field
+  insertAtCursor(textBox,unicodeEmoji);
+});  
 
 document.getElementById('mobile-menu').addEventListener('click', () => {
   let x = document.getElementById('chat-sidebar');
