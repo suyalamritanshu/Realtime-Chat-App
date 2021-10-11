@@ -96,5 +96,31 @@ document.getElementById('leave-btn').addEventListener('click', () => {
   } else {
   }
 });
+let picker = document.querySelector("emoji-picker");
+let emojiSelector = document.querySelector('.emoji');
+emojiSelector.addEventListener('click',(e) =>{
+      e.preventDefault();
+     if(picker.style.display==="none"){
+       picker.style.display = "block";
 
+     }
+     else {
+       picker.style.display = "none";
+     }
+
+})
+
+ 
+ 
+ picker.addEventListener("emoji-click", (event) => {
+        let textBox = document.getElementById('msg');
+       let myObj =  JSON.stringify(event.detail.unicode);
+       myObj = myObj.replace(/^"(.*)"$/, '$1');
+        textBox.value = textBox.value + myObj ;
+        console.log(event.detail);
+
+   });  
+
+    
+  
  
