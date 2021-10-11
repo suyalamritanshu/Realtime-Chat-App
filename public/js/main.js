@@ -73,7 +73,7 @@ function outputRoomName(room) {
 
 // Add users to DOM
 function outputUsers(users) {
-  
+
   var item = document.getElementById("activeUsers");
   userList.innerHTML = '';
   users.forEach((user) => {
@@ -82,13 +82,13 @@ function outputUsers(users) {
     userList.appendChild(li);
     userCount += 1;
     item.innerHTML = userCount;
-    
+
   });
   userCount = 0;
 }
 
 //Prompt the user before leave chat room
-document.getElementById('leave-btn').addEventListener('click', () => {
+document.getElementById('leave-btn-nav').addEventListener('click', () => {
   const leaveRoom = confirm('Want to leave the chatroom?');
   if (leaveRoom) {
     window.location = '../index.html';
@@ -110,8 +110,8 @@ emojiSelector.addEventListener('click',(e) =>{
 
 })
 
- 
- 
+
+
  picker.addEventListener("emoji-click", (event) => {
         let textBox = document.getElementById('msg');
        let myObj =  JSON.stringify(event.detail.unicode);
@@ -119,9 +119,9 @@ emojiSelector.addEventListener('click',(e) =>{
         textBox.value = textBox.value + myObj ;
         console.log(event.detail);
 
-   });  
+   });
 
-document.getElementById('mobile-menu').addEventListener('click', () => { 
+document.getElementById('mobile-menu').addEventListener('click', () => {
   let x = document.getElementById('chat-sidebar');
   if (x.style.display === "flex") {
     x.style.display = "none";
@@ -132,14 +132,10 @@ document.getElementById('mobile-menu').addEventListener('click', () => {
 )
 
 //Prompt the user before leave chat room
-document.getElementById('leave-btn').addEventListener('click', () => {
+document.getElementById('leave-btn-mobile').addEventListener('click', () => {
   const leaveRoom = confirm('Want to leave the chatroom?');
   if (leaveRoom) {
     window.location = '../index.html';
   } else {
   }
 });
-
-
-
- 
