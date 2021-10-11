@@ -121,6 +121,16 @@ emojiSelector.addEventListener('click',(e) =>{
 
    });  
 
-    
-  
+document.getElementById('mobile-menu').addEventListener('click', () => { 
+  let x = document.getElementById('chat-sidebar');
+  if (x.style.display === "flex") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "flex";
+  }
+}
+)
+
+
+
  

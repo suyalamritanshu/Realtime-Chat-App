@@ -16,14 +16,17 @@
   <div class="chat-container">
     <header class="chat-header">
       <h1><i class="fas fa-smile"></i> Realtime Chat App</h1>
-      <a id="leave-btn" class="btn">Leave Room</a>
+      <a id="leave-btn-nav" class="btn">Leave Room</a>
+      <img id= "mobile-menu" src="./assets/menu-icon.png" />
+   
     </header>
     <main class="chat-main">
-      <div class="chat-sidebar">
+      <div id="chat-sidebar">
         <h3><i class="fas fa-comments"></i> Room Name:</h3>
         <h2 id="room-name"></h2>
         <h3><i class="fas fa-users"></i> Users:<span id="activeUsers" class="activeUsers"></span></h3>
         <ul id="users"></ul>
+        <a id="leave-btn-mobile" class="btn">Leave Room</a>
       </div>
       <div class="chat-messages"></div>
     </main>
