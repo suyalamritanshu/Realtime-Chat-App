@@ -99,8 +99,9 @@ document.getElementById('leave-btn-nav').addEventListener('click', () => {
 
 // Toggle Emoji Picker
 const togglePicker = document.getElementById("emoji");
-const emojiPicker = document.querySelector('#emoji-picker');
+const emojiPicker = document.getElementById('emoji-picker');
 console.log({togglePicker});
+console.log({emojiPicker});
 togglePicker.addEventListener('click',(e) =>{
     e.preventDefault();
     console.log("Clicked togglePicker!");
@@ -127,7 +128,7 @@ document.getElementById('mobile-menu').addEventListener('click', () => {
 )
 
 //Prompt the user before leave chat room
-document.getElementById('leave-btn').addEventListener('click', () => {
+document.getElementById('leave-btn-nav').addEventListener('click', () => {
   const leaveRoom = confirm('Want to leave the chatroom?');
   if (leaveRoom) {
     window.location = '../index.html';
