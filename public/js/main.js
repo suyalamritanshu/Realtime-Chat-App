@@ -88,7 +88,7 @@ function outputUsers(users) {
 }
 
 //Prompt the user before leave chat room
-document.getElementById('leave-btn').addEventListener('click', () => {
+document.getElementById('leave-btn-nav').addEventListener('click', () => {
   const leaveRoom = confirm('Want to leave the chatroom?');
   if (leaveRoom) {
     window.location = '../index.html';
@@ -96,30 +96,25 @@ document.getElementById('leave-btn').addEventListener('click', () => {
   } else {
   }
 });
-let picker = document.querySelector("emoji-picker");
-let emojiSelector = document.querySelector('.emoji');
-emojiSelector.addEventListener('click',(e) =>{
-      e.preventDefault();
-     if(picker.style.display==="none"){
-       picker.style.display = "block";
 
-     }
-     else {
-       picker.style.display = "none";
-     }
-
-})
+// Toggle Emoji Picker
+const togglePicker = document.getElementById("emoji");
+const emojiPicker = document.querySelector('#emoji-picker');
+console.log({togglePicker});
+togglePicker.addEventListener('click',(e) =>{
+    e.preventDefault();
+    console.log("Clicked togglePicker!");
+    emojiPicker.classList.toggle("invisible");
+});
 
  
- 
- picker.addEventListener("emoji-click", (event) => {
-        let textBox = document.getElementById('msg');
-       let myObj =  JSON.stringify(event.detail.unicode);
-       myObj = myObj.replace(/^"(.*)"$/, '$1');
-        textBox.value = textBox.value + myObj ;
-        console.log(event.detail);
-
-   });  
+// Listen for emoji-click events and add unicode to text-box 
+emojiPicker.addEventListener("emoji-click", (event) => {
+  let textBox = document.getElementById('msg');
+  const unicodeEmoji = event.detail.unicode;
+  textBox.value = textBox.value + unicodeEmoji ;
+  console.log(event.detail);
+});  
 
 document.getElementById('mobile-menu').addEventListener('click', () => { 
   let x = document.getElementById('chat-sidebar');
