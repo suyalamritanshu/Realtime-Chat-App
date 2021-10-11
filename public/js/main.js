@@ -73,7 +73,7 @@ function outputRoomName(room) {
 
 // Add users to DOM
 function outputUsers(users) {
-  
+
   var item = document.getElementById("activeUsers");
   userList.innerHTML = '';
   users.forEach((user) => {
@@ -82,7 +82,7 @@ function outputUsers(users) {
     userList.appendChild(li);
     userCount += 1;
     item.innerHTML = userCount;
-    
+
   });
   userCount = 0;
 }
@@ -134,7 +134,7 @@ emojiPicker.addEventListener("emoji-click", (event) => {
   insertAtCursor(textBox,unicodeEmoji);
 });  
 
-document.getElementById('mobile-menu').addEventListener('click', () => { 
+document.getElementById('mobile-menu').addEventListener('click', () => {
   let x = document.getElementById('chat-sidebar');
   if (x.style.display === "flex") {
     x.style.display = "none";
@@ -145,14 +145,10 @@ document.getElementById('mobile-menu').addEventListener('click', () => {
 )
 
 //Prompt the user before leave chat room
-document.getElementById('leave-btn-nav').addEventListener('click', () => {
+document.getElementById('leave-btn-mobile').addEventListener('click', () => {
   const leaveRoom = confirm('Want to leave the chatroom?');
   if (leaveRoom) {
     window.location = '../index.html';
   } else {
   }
 });
-
-
-
- 
