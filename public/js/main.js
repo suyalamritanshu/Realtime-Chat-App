@@ -108,13 +108,30 @@ togglePicker.addEventListener('click',(e) =>{
     emojiPicker.classList.toggle("invisible");
 });
 
- 
+function insertAtCursor(myField, myValue) {
+  if (document.selection) {
+      myField.focus();
+      sel = document.selection.createRange();
+      sel.text = myValue;
+  }
+  else if (myField.selectionStart || myField.selectionStart == '0') {
+      var startPos = myField.selectionStart;
+      var endPos = myField.selectionEnd;
+      myField.value = myField.value.substring(0, startPos)
+          + myValue
+          + myField.value.substring(endPos, myField.value.length);
+  } else {
+      myField.value += myValue;
+  }
+}
+
 // Listen for emoji-click events and add unicode to text-box 
 emojiPicker.addEventListener("emoji-click", (event) => {
   let textBox = document.getElementById('msg');
   const unicodeEmoji = event.detail.unicode;
-  textBox.value = textBox.value + unicodeEmoji ;
-  console.log(event.detail);
+  
+  // Inserting unicode character at current cursor-location in input field
+  insertAtCursor(textBox,unicodeEmoji);
 });  
 
 document.getElementById('mobile-menu').addEventListener('click', () => { 
