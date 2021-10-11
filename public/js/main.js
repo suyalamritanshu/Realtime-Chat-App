@@ -131,6 +131,15 @@ document.getElementById('mobile-menu').addEventListener('click', () => {
 }
 )
 
+//Prompt the user before leave chat room
+document.getElementById('leave-btn').addEventListener('click', () => {
+  const leaveRoom = confirm('Want to leave the chatroom?');
+  if (leaveRoom) {
+    window.location = '../index.html';
+  } else {
+  }
+});
+
 
 
  
